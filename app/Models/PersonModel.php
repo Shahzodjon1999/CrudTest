@@ -11,7 +11,7 @@ class PersonModel extends Model
 
     //public $timestamps = false;
 
-    protected $Table ="person_models";
+    protected $Table = "person_models";
 
-    protected $fillable =['Name','LastName','Address','Email','PhoneNumber'];
+    protected $fillable = ['Name', 'LastName', 'Address', 'Email', 'PhoneNumber'];
 }

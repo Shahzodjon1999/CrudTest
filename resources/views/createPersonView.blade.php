@@ -15,7 +15,7 @@
                     <h2>Add Persons</h2>
                 </div>
                 <div class="pull-right">
-                    <a class="btn btn-primary" href="{{route('index')}}"> Index Page</a>
+                    <a class="btn btn-primary" href="{{ route('index') }}"> Index Page</a>
                 </div>
             </div>
         </div>

@@ -17,14 +17,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('createPersonView');
-});
+})->name('creatViewRoute');
 
-Route::get('/persons',[PersonController::class,"index"])->name('index');
+Route::get('/persons', [PersonController::class, "index"])->name('index');
 
-Route::post('/Add',[PersonController::class,"createPerson"])->name('add');
-Route::get('/show',[PersonController::class,'ShowView']);
-Route::get('/delete/{id}',[PersonController::class,'DeletePerson'])->name('delete');
-Route::post('/ubdate/{id}',[PersonController::class,'UbdatePerson'])->name('ubdate');
-
-
+Route::post('/Add', [PersonController::class, "createPerson"])->name('add');
+Route::get('/delete/{id}', [PersonController::class, 'DeletePerson'])->name('delete');
+Route::post('/ubdate/{id}', [PersonController::class, 'UpdatePerson'])->name('ubdate');
+Route::get('/Show/{id}', [PersonController::class, 'ShowViewEdite'])->name('edite');
 
