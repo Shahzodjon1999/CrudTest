@@ -35,3 +35,4 @@ Route::post('/Register',[LoginController::class,'RegisterLog'])->name('reg');
 Route::get('/SignIn', function () {
     return view('LoginView');
 });
+Route::post('/SignIn',[LoginController::class,'CheckLog'])->name('chek');

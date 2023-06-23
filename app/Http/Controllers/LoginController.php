@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\LoginModel;
 use Illuminate\Http\Request;
+use Hash;
 
 class LoginController extends Controller
 {
@@ -19,5 +20,12 @@ class LoginController extends Controller
         ]);
 
         return redirect()->back();
+    }
+
+    public function  CheckLog(Request $request)
+    {
+        $login = LoginModel::where('Login', $request->username)->first();
+
+        return dd($login);
     }
 }
