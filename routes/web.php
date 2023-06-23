@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PersonController;
 use Faker\Provider\ar_EG\Person;
 use Illuminate\Support\Facades\Route;
@@ -26,3 +27,11 @@ Route::get('/delete/{id}', [PersonController::class, 'DeletePerson'])->name('del
 Route::post('/ubdate/{id}', [PersonController::class, 'UpdatePerson'])->name('ubdate');
 Route::get('/Show/{id}', [PersonController::class, 'ShowViewEdite'])->name('edite');
 
+Route::get('/Register', function () {
+    return view('RegisterView');
+});
+Route::post('/Register',[LoginController::class,'RegisterLog'])->name('reg');
+
+Route::get('/SignIn', function () {
+    return view('LoginView');
+});
