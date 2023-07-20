@@ -26,7 +26,7 @@ class PersonController extends Controller
         return redirect()->back();
     }
 
-    public function ShowViewEdite($id)
+    public function EditeView($id)
     {
         $result = PersonModel::where('id', $id)->first();
         return view('UbdatePersonView')->with('result', $result);
@@ -52,5 +52,10 @@ class PersonController extends Controller
         ]);
 
         return redirect()->back();
+    }
+    public function show($id)
+    {
+        $result = PersonModel::where('id', $id)->first();
+        return view('showPerson',compact('result'));
     }
 }

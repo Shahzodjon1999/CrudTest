@@ -1,38 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://www.phptutorial.net/app/css/style.css">
-    <title>Register</title>
-</head>
-
-<body>
+@extends('Auth.layouts')
+@section('content')
     <main>
         <form action="{{ route('reg') }}" method="POST" enctype="multipart/form-data">
             @csrf
-            <h1>Sign Up</h1>
+            <h1>Аз руйхат гушатан</h1>
             <div>
-                <label for="username">Username:</label>
-                <input type="text" name="username" id="username">
+                <label for="username">Ном:</label>
+                <input type="text" name="username" id="username" class="block mt-1 w-full" required autocomplete="additional-name">
             </div>
             <div>
                 <label for="email">Email:</label>
-                <input type="email" name="email" id="email">
+                <input type="email" name="email" id="email"  class="block mt-1 w-full"  :value="old('email')" required autofocus autocomplete="email">
             </div>
             <div>
-                <label for="login">Login:</label>
-                <input type="text" name="login" id="password2">
+                <label for="login">Логин:</label>
+                <input type="text" name="login" id="login" class="block mt-1 w-full"  required autocomplete="username">
             </div>
             <div>
-                <label for="password">Password:</label>
-                <input type="password" name="password" id="password">
+                <label for="password">Парол:</label>
+                <input type="password" name="password" id="password" class="block mt-1 w-full" required autocomplete="current-password">
             </div>
-            <button type="submit">Register</button>
-            <footer>Already a member? <a href="login.php">Login here</a></footer>
+            <button type="submit">Сабт кардан</button>
         </form>
     </main>
-</body>
-
-</html>
+@endsection

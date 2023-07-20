@@ -1,32 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://www.phptutorial.net/app/css/style.css">
-    <title>Login</title>
-</head>
-
-<body>
-    <main>
+@extends('Auth.layouts')
+@section('content')
+<main>
         <form action="{{ route('chek') }}" method="POST" enctype="multipart/form-data">
             @csrf
-            <h1>Login</h1>
+            <h1>Даромадан</h1>
             <div>
-                <label for="username">Username:</label>
-                <input type="text" name="username" id="username">
+                <label for="username">Логин:</label>
+                <input type="text" name="username" id="username" class="block mt-1 w-full"  required autofocus autocomplete="username">
             </div>
             <div>
-                <label for="password">Password:</label>
-                <input type="password" name="password" id="password">
+                <label for="password">Парол:</label>
+                <input type="password" name="password" id="password"
+                class="block mt-1 w-full" required autocomplete="current-password" >
             </div>
-            <section>
-                <button type="submit">Login</button>
-                <a href="register.php">Register</a>
-            </section>
+            <button type="submit">Даромадан</button>
+                <a href="{{route('regview')}}">Аз руйхат гушатан</a>
         </form>
     </main>
-</body>
-
-</html>
+@endsection

@@ -16,23 +16,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('createPersonView');
-})->name('creatViewRoute');
+Route::get('/creat', function (){return view('createPersonView');})->name('creatViewRoute');
+Route::get('/Register', function (){ return view('RegisterView');})->name('regview');
+Route::get('/SignIn', function () {return view('LoginView');})->name('log');  
 
-Route::get('/persons', [PersonController::class, "index"])->name('index');
+Route::get('/', [PersonController::class, "index"])->name('index');
+
 
 Route::post('/Add', [PersonController::class, "createPerson"])->name('add');
-Route::get('/delete/{id}', [PersonController::class, 'DeletePerson'])->name('delete');
 Route::post('/ubdate/{id}', [PersonController::class, 'UpdatePerson'])->name('ubdate');
-Route::get('/Show/{id}', [PersonController::class, 'ShowViewEdite'])->name('edite');
-
-Route::get('/Register', function () {
-    return view('RegisterView');
-});
 Route::post('/Register',[LoginController::class,'RegisterLog'])->name('reg');
-
-Route::get('/SignIn', function () {
-    return view('LoginView');
-});
 Route::post('/SignIn',[LoginController::class,'CheckLog'])->name('chek');
+
+Route::get('/show/{id}',[PersonController::class,'show'])->name('show');
+Route::get('/edite/{id}', [PersonController::class, 'EditeView'])->name('edite');
+Route::get('/delete/{id}', [PersonController::class, 'DeletePerson'])->name('delete');
+
+
+
+

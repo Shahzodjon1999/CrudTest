@@ -8,8 +8,6 @@ use Hash;
 
 class LoginController extends Controller
 {
-
-
     public function RegisterLog(Request $request)
     {
         LoginModel::create([
@@ -26,6 +24,6 @@ class LoginController extends Controller
     {
         $login = LoginModel::where('Login', $request->username)->first();
 
-        return dd($login);
+        return redirect()->back();
     }
 }
